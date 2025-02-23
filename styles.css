@@ -1,0 +1,232 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+details > summary {
+  display: inline-block;
+  border: 2px solid #5C5962;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #0066CD;
+  outline: none;
+  font-size: 16px;
+  background-color: white;
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details {
+  padding: 0;
+  border: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+details[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+details > div {
+  border: none;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+}
+
+body {
+  font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+  body {
+    width: 980px;
+  }
+}
+
+h1 {
+  font-weight: 300;
+  line-height: 1.15em;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.75em;
+  text-align: left;
+  font-weight: 400;
+  margin: 16px 0px 4px 0px;
+}
+
+h3 {
+  text-align: left;
+  font-weight: 600;
+  margin: 16px 0px 4px 0px;
+}
+
+a:link, a:visited {
+  color: #5364cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #208799;
+}
+
+.paper-btn-coming-soon {
+  position: relative; 
+  top: 0;
+  left: 0;
+}
+
+.coming-soon {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+
+.paper-btn-parent {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0px;
+}
+
+.paper-btn:hover {
+  opacity: 0.85;
+}
+
+.example-btn {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  background-color: #4cd468;
+  color: white !important;
+  font-size: 20px;
+  width: 220px;
+  font-weight: 600;
+}
+
+.example-btn-parent {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0px;
+}
+
+.example-btn:hover {
+  opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+
+.paper-title {
+    padding: 1px 0px 1px 0px;
+}
+
+.author-row-new { 
+    text-align: center; 
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 12px;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+
+p {
+    line-height: 1.25em;
+}
+
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.venue {
+    font-size: 23px;
+    padding-top: 10px;
+}
+
+.affil-row {
+    margin-top: 18px;
+}
+
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;  /* Changed from black to #ddd for a lighter shade */
+    margin: 0;
+}
+
+/* Rest of your existing CSS... */ 
