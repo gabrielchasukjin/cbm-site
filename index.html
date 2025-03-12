@@ -51,126 +51,159 @@
             <div class="paper-btn-coming-soon">
                 <a class="paper-btn" href="https://github.com/gabrielchasukjin/cbm-gui-frontend">
                     <span class="material-icons"> code </span>
-                    Code
+                    Code (Frontend)
+                </a>
+            </div>
+            <div class="paper-btn-coming-soon">
+                <a class="paper-btn" href="https://github.com/sxluong/CBM-GUI-Backend">
+                    <span class="material-icons"> code </span>
+                    Code (Backend)
                 </a>
             </div>
         </div></div>
-        <!--
-        <div style="clear: both">
-            <div class="example-btn-parent">
-            <a class="example-btn" href="./examples.html">
-                <span class="material-icons"> dashboard </span> 
-                 Neuron Examples
-            </a>
-        </div></div>
-        -->
+
     </div>
     
 
-    
     <section id="abstract"/>
         <hr>
         <h2>Abstract</h2>
         <div class="flex-row">
             <p>
-                Large Language Models (LLMs) have shown remarkable capabilities, but their <b>"black-box" nature</b> often makes them difficult to interpret. <b>Concept Bottle-neck Layers (CBLs)</b> address this by linking model outputs to human-understandable concepts. Our project introduces a <b>user-friendly Graphical User Interface (GUI)</b> that allows users, regardless of their technical background, to easily integrate CBLs into pre-trained LLMs (provided as .pt files), display top N highly activated concepts, and analyze and prune biased concepts. By identifying and unlearning biased concepts, these models can produce fairer, more reliable predictions. Our end goal is to provide users with the ability to scrutinize and adjust models to be <b>explainable and fair</b>. This work builds upon the research and framework developed by Weng et al. (2024).
-            </p>
+                Large Language Models (LLMs) operate as "black boxes," limiting interpretability. Our project creates a user-friendly GUI for Concept Bottleneck Layers (CBLs) that connects model outputs to human-understandable concepts. This platform allows users of all technical backgrounds to integrate CBLs with pre-trained LLMs, visualize concept activations, analyze concept contributions, and prune biased concepts—all while maintaining model performance. Building on Weng et al. (2024), we bridge the gap between advanced interpretability techniques and practical applications through an accessible interface and robust architecture.            </p>
             <div style="text-align: center; margin: auto;">
-                <left><p><b>Figure 1:</b> Visualization of Top 10 Concept Activation during Classification Task.</p></left>
-                <center><img class="card-img-top" src="bar-chart.png" style="width:650px"></center>
+                <left><p><b>Figure 1:</b> Comparison Between Traditional Black Box LLMs and Concept Bottleneck Models</p></left>
+                <center><img class="card-img-top" src="vis.png" style="width:650px"></center>
             </div>
         </div>
     </section>
 
-    <section id="motivation"/>
+    <section id="motivation">
         <hr>
-        <h2>Motivation</h2>
+        <h2>Background and Motivation</h2>
         <div class="flex-row">
             <p>
-                Large Language Models (LLMs) excel in various tasks but often lack transparency. <b>Concept bottleneck layers (CBLs)</b> allow for transparency by connecting model outputs to human-readable concepts. However, existing CBL implementations require technical expertise, restricting their accessibility. Our project builds on Weng et al. (2024) to create an easy-to-use GUI, allowing users of all skill levels to visualize concept activations, adjust weights, and unlearn biased concepts for greater interpretability, trustworthiness, and fairness.<br><br>
-
+                Large Language Models (LLMs) excel at many tasks but function as "black boxes," raising concerns about trust and accountability. Concept Bottleneck Models (CBMs) address this by using human-interpretable concepts as intermediate layers, revealing which concepts influence model decisions.
+                
                 <b>Key Challenges:</b>
                 <ul>
                     <li><b>Technical Barrier:</b> Current CBL tools require programming expertise, limiting their use to technical users</li>
                     <li><b>Lack of Visualization:</b> Existing implementations don't provide intuitive ways to visualize and understand concept activations</li>
                     <li><b>Limited Control:</b> Users need better tools to identify and mitigate biased concepts in their models</li>
                 </ul>
+                
             </p>
+            
+        </div>
+    </section>
+    
+    <section id="features">
+        <hr>
+        <h2>Core Functionalities</h2>
+        <div class="flex-row">
+            <p>
+                Our project builds on Weng et al. (2024) to create an intuitive GUI platform that democratizes access to CBL technology, allowing users of all technical backgrounds to leverage these powerful interpretability tools.
+
+                <ul>
+                    <li><b>Multi-Model Training:</b> Train and manage several models with different configurations simultaneously</li>
+                    <li><b>Interactive Visualizations:</b> Explore concept activations through charts, diagrams, and tables</li>
+                    <li><b>Contribution Analysis:</b> Distinguish between concept detection and actual influence on predictions</li>
+                    <li><b>Bias Detection:</b> Automatically identify problematic concepts based on activation patterns</li>
+                    <li><b>Concept Pruning:</b> Selectively remove concepts to improve model fairness</li>
+                    <li><b>Version Control:</b> Compare and revert to previous model versions as needed</li>
+                </ul>
+            </p>
+        </div>
+        <div style="text-align: center; margin: auto; margin-top: 20px;">
+            <center><img class="card-img-top" src="page.png" style="width:850px; border: 1px solid #ddd; border-radius: 5px;"></center>
+            <left><p><b>Figure 2:</b> CBM-GUI Workflow: A comprehensive platform that enables users to train CBL models, visualize concept activations, identify biased concepts, and prune them to enhance model fairness and interpretability.</p></left>
         </div>
     </section>
 
-    <section id="method"/>
+    <section id="method">
         <hr>
-        <h2>Method</h2>
+        <h2>System Architecture and Features</h2>
         <div class="flex-row">
             <p>
-                <h3>User Interface Workflow</h3>
-                Our GUI makes CBL technology accessible to all users by providing:
-                <ul>
-                    <li>Easy integration of CBLs into pre-trained models</li>
-                    <li>Interactive visualization of concept activations</li>
-                    <li>Tools for identifying and mitigating biased concepts</li>
-                </ul>
-                <br>
-                The workflow consists of four simple steps:
+                Our application has evolved significantly beyond the Minimal Viable Product (MVP) stage to a production-ready system with a scalable microservices architecture, persistent database storage, and a decoupled backend-frontend architecture.
                 
-                <h4>Step 1: Train</h4>
-                Users can easily train a CBL layer by uploading their pre-trained model and clicking the "Train" button. The interface provides real-time training progress and allows configuration of key parameters through an intuitive form. Our training process, developed and inspired by Weng et al. (2024), involves several sophisticated steps that work together to create interpretable concept representations.
-
+                <h3>System Architecture</h3>
+                The CBM-GUI follows a client-server architecture with clearly defined separation of concerns:
+                <ul>
+                    <li><b>Frontend Layer:</b> A React application that handles user interaction, state management, and visualization rendering. This layer communicates with the backend through a well-defined REST API.</li>
+                    <li><b>Backend Layer:</b> A Django application that processes API requests, orchestrates model training and inference operations, and manages data persistence. The backend implements robust error handling and validation to ensure system stability.</li>
+                    <li><b>Data Persistence Layer:</b> An SQLite3 database that stores model metadata, training configurations, and serialized model parameters, enabling stateful operation and model persistence across sessions.</li>
+                </ul>
+                
                 <details>
                     <summary>Technical Training Details</summary>
-                    <div>
-                        <ol>
-                            <li><b>Concept Generation:</b> Given a text classification task, generate a concept set for each class by prompting modern language models. This involves using GPT-based models to extract relevant concepts that characterize each class.</li>
-                            <li><b>Automatic concept scoring (ACS):</b> Leverage sentence embedding models to measure the similarity between each concept in the concept set and each text sample in the dataset. We use state-of-the-art embedding models to create dense vector representations for both concepts and text samples.</li>
-                            <li><b>Train the Concept Bottleneck Layer:</b> Learn the concept mapping from uninterpretable features to human-interpretable concepts by maximizing the similarity between the neuron activations and the concept scores. This involves optimizing a neural network layer that transforms raw model features into concept-aligned representations.</li>
-                            <li><b>Learn the predictor:</b> Train the final linear layer to make predictions for the downstream tasks. This layer learns to combine concept activations to make accurate predictions while maintaining interpretability.</li>
-                        </ol>
-                    </div>
-                </details>
-
-                <h4>Step 2: Classify</h4>
-                After training, users can input text for classification. The model processes the input and provides predictions while exposing the underlying concept activations.
-
-                <h4>Step 3: Visualize</h4>
-                The GUI presents interactive visualizations of concept activations, helping users understand which concepts contributed most to the model's decision. Users can explore concept relationships and their impact on classifications.
-
-                <h4>Step 4: Prune</h4>
-                Based on the visualizations, users can identify and prune unwanted or biased concepts. The interface provides tools to adjust concept weights and observe the immediate impact on model predictions.
-                <br><br>
-
-                <div style="text-align: center; margin: auto;">
-                    <left><p><b>Figure 2:</b> CBM-GUI Interface: Our user-friendly interface showing the classification task with real-time concept visualization.</p></left>
-                    <center><img class="card-img-top" src="Classy.png" style="width:850px; border: 1px solid #ddd; border-radius: 5px;"></center>
-                </div>
-                <br><br>
-
-                <h3>Technical Deep Dive</h3>
-                <p>
-                    Our system architecture is designed for efficiency and scalability, combining modern web technologies with robust database management.
-                </p>
-
-                <details>
-                    <summary>Technical Implementation Details</summary>
-                    <div>
-                        <h4>Tech Stack</h4>
-                        The CBM-GUI utilizes a Django-React structure:
-                        <ul>
-                            <li><b>Frontend:</b> React handles dynamic UI, user interactions, and state management</li>
-                            <li><b>Backend:</b> Django processes API requests, manages model training scripts, and interacts with the database</li>
-                            <li><b>Microservices:</b> Each microservice performs specific tasks, such as running model training scripts and handling post-processing</li>
-                            <li><b>Database:</b> SQLite3 stores trained models, allowing users to switch between them and restore previous configurations</li>
-                        </ul>
-                        When a user interacts with the GUI, React sends API requests to Django, which calls the appropriate microservice. The backend then retrieves or updates stored models, allowing real-time training updates and result visualization.
-
-                        <h4>Database and Model Management</h4>
-                        The system integrates an SQLite3 database to manage trained models. This enables:
-                        <ul>
-                            <li>Users to train multiple models in separate tabs</li>
-                            <li>Storage of trained models for future retrieval and comparison</li>
-                            <li>Easy switching between models without retraining from scratch</li>
-                        </ul>
-                        Users can restore past models, facilitating iterative experimentation and performance evaluation. Each model entry in the database includes metadata such as training parameters, dataset used, and timestamps.
+                    <div class="concept-bottleneck-explanation">
+                        <h3>Concept Bottleneck Models: Technical Foundation</h3>
+                        
+                        <p>Our system implements Concept Bottleneck Models (CBMs) that introduce interpretable layers to traditional "black-box" language models by mapping model representations to human-understandable concepts.</p>
+                        
+                        <h4>Key Mathematical Formulations:</h4>
+                        
+                        <div class="formula-section">
+                            <h5>1. Automatic Concept Scoring (ACS)</h5>
+                            <p>For text sample x and concept set C, we calculate concept scores as:</p>
+                            \begin{equation}
+                            S_c(x) = [E(c_1) \cdot E(x), E(c_2) \cdot E(x), ..., E(c_k) \cdot E(x)]^T
+                            \end{equation}
+                            <p>Where \(E(x)\) is the text embedding from our sentence embedding model and \(E(c_i)\) is the embedding of concept i.</p>
+                        </div>
+                        
+                        <div class="formula-section">
+                            <h5>2. Training the Concept Bottleneck Layer</h5>
+                            <p>We optimize the CBL parameters to align with concept scores:</p>
+                            \begin{equation}
+                            \max_{\theta_1,\theta_2} \frac{1}{|D|} \sum_{x \in D} Sim(f_{CBL}(f_{LM}(x; \theta_1); \theta_2), S_c(x))
+                            \end{equation}
+                            <p>Where \(f_{LM}\) is the pretrained language model with parameters \(\theta_1\) and \(f_{CBL}\) is our concept bottleneck layer with parameters \(\theta_2\).</p>
+                        </div>
+                        
+                        <div class="formula-section">
+                            <h5>3. Learning the Predictor</h5>
+                            <p>The final layer is trained with the following objective:</p>
+                            \begin{equation}
+                            \min_{W,b} \frac{1}{|D|} \sum_{x,y \in D} L_{CE}(W \cdot A^+_N(x) + b, y) + \lambda R(W)
+                            \end{equation}
+                            <p>Where \(A^+_N(x) = ReLU(A_N(x))\) represents the non-negative activations from the CBL, and the regularization term \(R(W) = \alpha||W||_1 + (1-\alpha)\frac{1}{2}||W||^2_2\) combines L1 and L2 penalties.</p>
+                        </div>
+                        
+                        <div class="formula-section">
+                            <h5>4. Concept Contribution Analysis</h5>
+                            <p>For any text sample x, the contribution of concept i to class j is calculated as:</p>
+                            \begin{equation}
+                            \text{contribution}_{j,i} = a_i \times W_{j,i}
+                            \end{equation}
+                            <p>Where \(a_i\) is the activation of concept i and \(W_{j,i}\) is the weight connecting concept i to class j.</p>
+                        </div>
+                        
+                        <div class="formula-section">
+                            <h5>5. Concept Pruning for Bias Mitigation</h5>
+                            <p>To remove a biased concept i, we zero its weights:</p>
+                            \begin{equation}
+                            W_{j,i} = 0 \quad \forall j \in \{1, 2, ..., \text{num\_classes}\}
+                            \end{equation}
+                            <p>This ensures that regardless of the concept's activation, its contribution becomes zero:</p>
+                            \begin{equation}
+                            \text{contribution}_{j,i} = a_i \times 0 = 0
+                            \end{equation}
+                        </div>
+                        
+                        <div class="formula-section">
+                            <h5>6. Automatic Concept Correction (ACC)</h5>
+                            <p>We enhance concept scores based on class associations:</p>
+                            \begin{equation}
+                            S^{ACC}_c(x)_i = 
+                            \begin{cases} 
+                              E(c_i) \cdot E(x) & \text{if } E(c_i) \cdot E(x) > 0 \text{ and } M(c_i) = y \\
+                              0 & \text{otherwise}
+                            \end{cases}
+                            \end{equation}
+                            <p>Where \(M(c_i)\) maps concept \(c_i\) to its associated class.</p>
+                        </div>
                     </div>
                 </details>
             </p>
@@ -179,42 +212,108 @@
 
     <section id="results"/>
         <hr>
-        <h2>Experiment Results</h2>
+        <h2>Concept Analysis and Pruning Mechanisms</h2>
         <div class="flex-row">
-            <div class="mx-auto">
-                <p><b>[Section Under Construction]</b></p>
-                <p>
-                    Our pruning interface allows users to selectively remove concepts from their trained CBL models. Through our intuitive GUI, users can:
-                    <ul>
-                        <li>Select specific concepts they wish to remove from the model</li>
-                        <li>Apply pruning with a single click</li>
-                        <li>View immediate feedback on model performance</li>
-                    </ul>
-                </p>
-
-                <div style="text-align: center; margin: auto;">
-                    <left><p><b>Figure 3:</b> Pruning Interface: Users can select and remove unwanted concepts while monitoring model performance.</p></left>
-                    <center><img class="card-img-top" src="Prune.png" style="width:850px; border: 1px solid #ddd; border-radius: 5px;"></center>
-                </div>
-                <br>
-
-                <h3>Impact on Model Performance</h3>
-                <p>
-                    One of the key metrics we track is the model's validation accuracy before and after pruning. Interestingly, maintaining similar accuracy post-pruning is often desirable, as it indicates that:
-                    <ul>
-                        <li>The removed concepts were potentially redundant or not critical for the core task</li>
-                        <li>The model has found alternative, potentially more appropriate concepts to rely on</li>
-                        <li>We've successfully removed unwanted biases without compromising model performance</li>
-                    </ul>
+            <p>
+                <h3>Concept Activation vs. Contribution</h3>
+                A fundamental distinction in our system is between concept activation and concept contribution:
+                
+                <ul>
+                    <li><b>Concept Activation:</b> Represents the raw output of a concept detector in the CBL, indicating the detected presence or strength of a particular concept in the input. Mathematically, if we denote the concept activation vector as \(\mathbf{a}\) where each element \(a_i\) corresponds to the activation of concept \(i\), these values are computed as:
                     
-                    This stability in accuracy suggests that our pruning method effectively removes targeted concepts while preserving the model's overall predictive capabilities. It demonstrates that we can make models more interpretable and fair without sacrificing their performance.
-                </p>
+                    \begin{equation}
+                    \mathbf{a} = f_{\text{CBL}}(\mathbf{x})
+                    \end{equation}
+                    
+                    where \(f_{\text{CBL}}\) is the concept bottleneck layer function and \(\mathbf{x}\) is the input representation. High activation values indicate that the model strongly detects the presence of that concept in the input.</li>
+                    
+                    <li><b>Concept Contribution:</b> Represents the actual influence of a concept on the model's final prediction, calculated as the product of concept activation and the corresponding weight in the classification layer. If we denote the weight matrix of the final layer as \(\mathbf{W}\) where \(W_{j,i}\) represents the weight connecting concept \(i\) to output class \(j\), then the contribution of concept \(i\) to class \(j\) is:
+                    
+                    \begin{equation}
+                    \text{contribution}_{j,i} = a_i \times W_{j,i}
+                    \end{equation}
+                    
+                    This measure captures the actual influence of a concept on the prediction, accounting for both the concept's presence (activation) and its learned importance (weight).</li>
+                </ul>
+                
+                This distinction is crucial because a concept may be strongly activated (high \(a_i\)) but have minimal impact on the prediction if its corresponding weight (\(W_{j,i}\)) is small. Conversely, concepts with moderate activation but large weights can significantly influence the model's output.
+            </p>
+            
+            <div style="text-align: center; margin: auto;">
+                <center><img class="card-img-top" src="act.png" style="width:850px; border: 1px solid #ddd; border-radius: 5px;"></center>
+                <left><p><b>Figure 4:</b> The top panel displays the raw activation values of the top 10 concepts. The bottom panel reveals the actual contributions of these concepts to the prediction.</p></left>
             </div>
+            <br>
+            
+            <p>
+                <h3>Concept Pruning Implementation</h3>
+                Our pruning interface allows users to selectively remove concepts from their trained CBL models through a systematic process:
+                
+                <ul>
+                    <li><b>Weight Zeroing Mechanism:</b> When a concept is pruned, the system sets the corresponding weights in the final classification layer to zero:
+                    
+                    \begin{equation}
+                    W_{j,i} = 0 \quad \forall j \in \{1, 2, ..., \text{num\_classes}\}
+                    \end{equation}
+                    
+                    This ensures that regardless of the concept's activation value, its contribution to any class prediction will be zero:
+                    
+                    \begin{equation}
+                    \text{contribution}_{j,i} = a_i \times 0 = 0
+                    \end{equation}
+                    </li>
+                    
+                    <li><b>Concept Detector Preservation:</b> The concept detector itself remains unchanged, meaning the model will still compute activation values for pruned concepts. This design choice preserves the model's internal representations while selectively nullifying the influence of specific concepts.</li>
+                    
+                    <li><b>Pruning Mask Implementation:</b> The system maintains an explicit pruning mask tensor that tracks which concepts have been pruned. This mask is a binary vector where a value of 0 indicates a pruned concept and 1 indicates a retained concept:
+                    
+                    \begin{equation}
+                    \text{mask}_i = 
+                    \begin{cases} 
+                      0 & \text{if concept } i \text{ is pruned} \\
+                      1 & \text{otherwise}
+                    \end{cases}
+                    \end{equation}
+                    
+                    This mask is applied during inference to ensure that even if the underlying model weights are modified or the model is reloaded, the pruning decisions are preserved.</li>
+                </ul>
+            </p>
+
+            <br>
+            
+
+        </div>
+    </section>
+
+    <section id="conclusion"/>
+        <hr>
+        <h2>Conclusion and Future Work</h2>
+        <div class="flex-row">
+            <p>
+                The CBM-GUI platform represents a significant advancement in making LLM interpretability techniques accessible to a broader audience. By providing an intuitive interface for CBL integration, concept visualization, and bias mitigation through concept pruning, the system bridges the gap between theoretical interpretability research and practical applications.
+
+                <h3>Future Work</h3>
+                <ul>
+                    <li><b>Distributed Training Support:</b> Extending the system to support distributed training on multiple GPUs or cloud-based infrastructure.</li>
+                    <li><b>Advanced Concept Discovery:</b> Implementing algorithms for automatic discovery of relevant concepts based on model behavior.</li>
+                    <li><b>Cross-Modal Concept Analysis:</b> Extending the approach to multimodal models, enabling concept-based interpretation of models that work with text, images, and other data types.</li>
+                </ul>
+                
+                Through these ongoing efforts, we aim to further democratize access to interpretable AI technologies and promote the development of transparent, fair, and accountable language models.
+            </p>
         </div>
     </section>
 
 
     <section>
+        <hr>
+        <h3>References</h3>
+        <p>
+            Sun, C.-E., Oikarinen, T., and Weng, T.-W. Crafting large language models for enhanced interpretability. In ICLR, 2024.<br>
+            Koh, P.W., Nguyen, T., Tang, Y.S., Mussmann, S., Pierson, E., Kim, B., and Liang, P. Concept bottleneck models. In International Conference on Machine Learning, 2020.<br>
+            Yuksekgonul, M., Wang, B., and Zou, J. Post-hoc concept bottleneck models. In International Conference on Machine Learning, 2022.
+        </p>
+        <br>
         This webpage template was recycled from <a href='https://nv-tlabs.github.io/LION/'>here</a>.
         <center><p><a href='https://accessibility.ucsd.edu/'><b>Accessibility</b></a></p></center>
     </section>
